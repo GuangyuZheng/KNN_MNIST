@@ -41,14 +41,8 @@ def knn(train_x, train_y, test_x, test_y, k):
 
 
 if __name__ == "__main__":
-    d = {}
     for k in range(3, 9):
         acc = knn(train_x, train_y, test_x, test_y, k)
         print('KNN k:', k, 'acc:', acc)
-        d[k] = acc
-    with open('knn_result.txt', 'w', encoding='utf-8') as f:
-        for key in d:
-            k = key
-            acc = d[key]
-            print('KNN k:', k, 'acc:', acc)
+        with open('knn_result.txt', 'a', encoding='utf-8') as f:
             f.write('KNN k: ' + str(k) + ' acc: ' + str(acc) + '\n')
